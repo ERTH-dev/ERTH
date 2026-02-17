@@ -26,7 +26,7 @@ const content = {
             metrics: [
                 { value: "100", label: "Active Members", suffix: "+" },
                 { value: "10", label: "Completed Projects", suffix: "+" },
-                { value: "5", label: "Departments", suffix: "" },
+                { value: "6", label: "Departments", suffix: "" },
                 { value: "4", label: "Growth Stages", suffix: "" }
             ],
 
@@ -91,7 +91,7 @@ const content = {
         // Departments Page
         departments: {
             pageTitle: "Corporate Departments",
-            pageSubtitle: "Experience real corporate structure through our seven specialized departments",
+            pageSubtitle: "Experience real corporate structure through our six specialized departments",
 
             depts: [
                 {
@@ -128,15 +128,15 @@ const content = {
                     skills: "Marketing Strategy, Content Creation, Social Media, Brand Management"
                 },
                 {
-                    name: "Operations Management",
-                    description: "Process optimization, project coordination, and execution excellence",
+                    name: "Technical Team",
+                    description: "Technology infrastructure, development, and digital innovation",
                     responsibilities: [
-                        "Process design and optimization",
-                        "Resource coordination",
-                        "Quality assurance",
-                        "Logistics and event management"
+                        "Software development and maintenance",
+                        "Technical infrastructure management",
+                        "Digital solutions and automation",
+                        "Technology support and troubleshooting"
                     ],
-                    skills: "Project Management, Process Optimization, Problem Solving, Coordination"
+                    skills: "Programming, System Administration, Problem Solving, Technical Documentation"
                 },
                 {
                     name: "Business Development",
@@ -170,10 +170,10 @@ const content = {
 
             items: [
                 {
-                    name: "Gym Management System – New Mansoura University",
-                    status: "Internal Project",
-                    description: "A non-traditional fitness center management system incorporating standard gym management functions with an integrated AI recommendation module. The AI generates personalized workout and nutrition plans based on individual student profiles, functioning as a virtual personal trainer.",
-                    results: "Fully developed management system, AI-driven personalized recommendation engine, deployment-ready architecture.",
+                    name: "AI-Powered Chest X-Ray Analysis & Clinical Support System",
+                    status: "Medical AI",
+                    description: "An AI-based imaging analysis system developed to simulate automated chest X-ray classification for identifying potential pneumonia and lung conditions. The system generates structured guidance and includes an AI chatbot interface, along with simulated patient record tracking.",
+                    results: "AI classification prototype, conversational medical support interface, simulated patient management system.",
                     timeline: "10 weeks"
                 },
                 {
@@ -186,7 +186,7 @@ const content = {
                 {
                     name: "AI-Powered Career Path & Learning Recommendation Platform",
                     status: "Faculty of Computer Science",
-                    description: "An AI-enabled platform that analyzes students’ technical skills and personality attributes to recommend suitable specialization tracks such as Front-End, Back-End, Full-Stack, AI, and DevOps. The system also provides curated free learning resources aligned with each recommended track.",
+                    description: "An AI-enabled platform that analyzes students' technical skills and personality attributes to recommend suitable specialization tracks such as Front-End, Back-End, Full-Stack, AI, and DevOps. The system also provides curated free learning resources aligned with each recommended track.",
                     results: "AI compatibility scoring system, structured skills-personality mapping, curated free learning roadmap engine.",
                     timeline: "8 weeks"
                 },
@@ -198,10 +198,10 @@ const content = {
                     timeline: "8 weeks"
                 },
                 {
-                    name: "AI-Powered Chest X-Ray Analysis & Clinical Support System",
-                    status: "Medical AI",
-                    description: "An AI-based imaging analysis system developed to simulate automated chest X-ray classification for identifying potential pneumonia and lung conditions. The system generates structured guidance and includes an AI chatbot interface, along with simulated patient record tracking.",
-                    results: "AI classification prototype, conversational medical support interface, simulated patient management system.",
+                    name: "Gym Management System – New Mansoura University",
+                    status: "Internal Project",
+                    description: "A non-traditional fitness center management system incorporating standard gym management functions with an integrated AI recommendation module. The AI generates personalized workout and nutrition plans based on individual student profiles, functioning as a virtual personal trainer.",
+                    results: "Fully developed management system, AI-driven personalized recommendation engine, deployment-ready architecture.",
                     timeline: "10 weeks"
                 },
                 {
@@ -297,16 +297,70 @@ const content = {
             ],
 
             formTitle: "Application Form",
-            formName: "Full Name",
-            formEmail: "Email Address",
-            formPhone: "Phone Number",
-            formUniversity: "University",
-            formMajor: "Major / Field of Study",
-            formYear: "Academic Year",
-            formDepartment: "Preferred Department",
-            formWhy: "Why do you want to join ERTH?",
-            formResume: "Upload Resume / CV",
-            formSubmit: "Submit Application",
+
+            // Form sections
+            form: {
+                personalInfo: "Personal Information",
+                academicInfo: "Academic Information",
+                applicationQuestions: "Application Questions",
+                optionalLinks: "Professional Links (Optional)",
+
+                // Personal fields
+                fullName: "Full Name *",
+                email: "Email Address *",
+                phone: "Phone Number *",
+                universityId: "University ID *",
+
+                // Academic fields
+                academicYear: "Academic Year *",
+                selectYear: "Select your year",
+                level1: "Level 1",
+                level2: "Level 2",
+                level3: "Level 3",
+                level4: "Level 4",
+                level5: "Level 5",
+
+                faculty: "Faculty *",
+                selectFaculty: "Select your faculty",
+                business: "Business",
+                law: "Law",
+                engineering: "Engineering",
+                cse: "Computer Science & Engineering",
+                science: "Science",
+                medicine: "Medicine",
+                dentistry: "Dentistry",
+                pharmacy: "Pharmacy",
+                ahst: "Applied Health Sciences Technology",
+                nursing: "Nursing",
+                textile: "Textile Science Engineering",
+                social: "Social & Human Sciences",
+                media: "Mass Media & Communication",
+                physicalTherapy: "Physical Therapy",
+
+                department: "Department Preference *",
+                selectDepartment: "Select preferred department",
+                dept: {
+                    hr: "Human Resources",
+                    marketingComms: "Marketing & Communications",
+                    technical: "Technical Team",
+                    businessDev: "Business Development",
+                    projectMgmt: "Project Management"
+                },
+
+                // Application questions
+                motivation: "Why do you want to join ERTH? *",
+                skills: "What skills can you bring to ERTH? *",
+                selectSkills: "Select a department first",
+                skillsHint: "Select all skills that apply",
+                otherSkills: "Please specify your skills *",
+
+                // Optional links
+                linkedin: "LinkedIn Profile",
+                portfolio: "Portfolio / GitHub",
+
+                // Submit
+                submit: "Submit Application"
+            },
             formPlaceholder: "Application Form Loading...",
 
             expectationsTitle: "What We Expect",
@@ -320,7 +374,7 @@ const content = {
 
             infoTitle: "Get In Touch",
             email: "Email",
-            emailValue: "contact@erth.eg",
+            emailValue: "info@erth.dev",
             phone: "Phone",
             phoneValue: "+20 XXX XXX XXXX",
             location: "Location",
@@ -368,7 +422,7 @@ const content = {
             metrics: [
                 { value: "100", label: "عضو نشط", suffix: "+" },
                 { value: "10", label: "مشروع مكتمل", suffix: "+" },
-                { value: "5", label: "أقسام", suffix: "" },
+                { value: "6", label: "أقسام", suffix: "" },
                 { value: "4", label: "مراحل نمو", suffix: "" }
             ],
 
@@ -433,7 +487,7 @@ const content = {
         // Departments Page
         departments: {
             pageTitle: "الأقسام المؤسسية",
-            pageSubtitle: "اختبر الهيكل المؤسسي الحقيقي من خلال أقسامنا السبعة المتخصصة",
+            pageSubtitle: "اختبر الهيكل المؤسسي الحقيقي من خلال أقسامنا الستة المتخصصة",
 
             depts: [
                 {
@@ -470,15 +524,15 @@ const content = {
                     skills: "استراتيجية التسويق، إنشاء المحتوى، وسائل التواصل الاجتماعي، إدارة العلامة التجارية"
                 },
                 {
-                    name: "إدارة العمليات",
-                    description: "تحسين العمليات وتنسيق المشاريع والتميز في التنفيذ",
+                    name: "الفريق التقني",
+                    description: "البنية التحتية التكنولوجية والتطوير والابتكار الرقمي",
                     responsibilities: [
-                        "تصميم وتحسين العمليات",
-                        "تنسيق الموارد",
-                        "ضمان الجودة",
-                        "اللوجستيات وإدارة الفعاليات"
+                        "تطوير وصيانة البرمجيات",
+                        "إدارة البنية التحتية التقنية",
+                        "الحلول الرقمية والأتمتة",
+                        "الدعم الفني وحل المشكلات"
                     ],
-                    skills: "إدارة المشاريع، تحسين العمليات، حل المشكلات، التنسيق"
+                    skills: "البرمجة، إدارة الأنظمة، حل المشكلات، التوثيق التقني"
                 },
                 {
                     name: "تطوير الأعمال",
@@ -512,10 +566,10 @@ const content = {
 
             items: [
                 {
-                    name: "نظام إدارة الصالة الرياضية - جامعة المنصورة الجديدة",
-                    status: "مشروع داخلي",
-                    description: "نظام إدارة غير تقليدي لمركز اللياقة البدنية يدمج وظائف إدارة الصالات الرياضية القياسية مع وحدة توصيات مدعومة بالذكاء الاصطناعي. يقوم الذكاء الاصطناعي بإنشاء خطط تمرين وتغذية مخصصة بناءً على ملفات الطلاب الفردية، ليعمل كمدرب شخصي افتراضي.",
-                    results: "نظام إدارة مطور بالكامل، محرك توصيات مخصص مدعوم بالذكاء الاصطناعي، بنية جاهزة للنشر.",
+                    name: "نظام تحليل صور الأشعة السينية للصدر والدعم السريري المدعوم بالذكاء الاصطناعي",
+                    status: "ذكاء اصطناعي طبي",
+                    description: "نظام تحليل صور قائم على الذكاء الاصطناعي تم تطويره لمحاكاة التصنيف الآلي للأشعة السينية للصدر لتحديد الالتهاب الرئوي المحتمل وحالات الرئة. يولد النظام إرشادات منظمة ويتضمن واجهة محادثة آلية بالذكاء الاصطناعي، إلى جانب تتبع محاكى لسجلات المرضى.",
+                    results: "نموذج أولي لتصنيف الذكاء الاصطناعي، واجهة دعم طبي للمحادثة، نظام إدارة مرضى محاكى.",
                     timeline: "10 أسابيع"
                 },
                 {
@@ -540,10 +594,10 @@ const content = {
                     timeline: "8 أسابيع"
                 },
                 {
-                    name: "نظام تحليل صور الأشعة السينية للصدر والدعم السريري المدعوم بالذكاء الاصطناعي",
-                    status: "ذكاء اصطناعي طبي",
-                    description: "نظام تحليل صور قائم على الذكاء الاصطناعي تم تطويره لمحاكاة التصنيف الآلي للأشعة السينية للصدر لتحديد الالتهاب الرئوي المحتمل وحالات الرئة. يولد النظام إرشادات منظمة ويتضمن واجهة محادثة آلية بالذكاء الاصطناعي، إلى جانب تتبع محاكى لسجلات المرضى.",
-                    results: "نموذج أولي لتصنيف الذكاء الاصطناعي، واجهة دعم طبي للمحادثة، نظام إدارة مرضى محاكى.",
+                    name: "نظام إدارة الصالة الرياضية - جامعة المنصورة الجديدة",
+                    status: "مشروع داخلي",
+                    description: "نظام إدارة غير تقليدي لمركز اللياقة البدنية يدمج وظائف إدارة الصالات الرياضية القياسية مع وحدة توصيات مدعومة بالذكاء الاصطناعي. يقوم الذكاء الاصطناعي بإنشاء خطط تمرين وتغذية مخصصة بناءً على ملفات الطلاب الفردية، ليعمل كمدرب شخصي افتراضي.",
+                    results: "نظام إدارة مطور بالكامل، محرك توصيات مخصص مدعوم بالذكاء الاصطناعي، بنية جاهزة للنشر.",
                     timeline: "10 أسابيع"
                 },
                 {
@@ -639,16 +693,70 @@ const content = {
             ],
 
             formTitle: "نموذج التقديم",
-            formName: "الاسم الكامل",
-            formEmail: "البريد الإلكتروني",
-            formPhone: "رقم الهاتف",
-            formUniversity: "الجامعة",
-            formMajor: "التخصص / مجال الدراسة",
-            formYear: "السنة الأكاديمية",
-            formDepartment: "القسم المفضل",
-            formWhy: "لماذا تريد الانضمام لإرث؟",
-            formResume: "تحميل السيرة الذاتية",
-            formSubmit: "إرسال الطلب",
+
+            // Form sections
+            form: {
+                personalInfo: "المعلومات الشخصية",
+                academicInfo: "المعلومات الأكاديمية",
+                applicationQuestions: "أسئلة التقديم",
+                optionalLinks: "روابط مهنية (اختياري)",
+
+                // Personal fields
+                fullName: "الاسم الكامل *",
+                email: "البريد الإلكتروني *",
+                phone: "رقم الهاتف *",
+                universityId: "الرقم الجامعي *",
+
+                // Academic fields
+                academicYear: "السنة الأكاديمية *",
+                selectYear: "اختر سنتك الدراسية",
+                level1: "المستوى الأول",
+                level2: "المستوى الثاني",
+                level3: "المستوى الثالث",
+                level4: "المستوى الرابع",
+                level5: "المستوى الخامس",
+
+                faculty: "الكلية *",
+                selectFaculty: "اختر كليتك",
+                business: "الأعمال",
+                law: "القانون",
+                engineering: "الهندسة",
+                cse: "علوم وهندسة الحاسب",
+                science: "العلوم",
+                medicine: "الطب",
+                dentistry: "طب الأسنان",
+                pharmacy: "الصيدلة",
+                ahst: "العلوم الصحية التطبيقية",
+                nursing: "التمريض",
+                textile: "علوم وهندسة المنسوجات",
+                social: "العلوم الاجتماعية والإنسانية",
+                media: "الإعلام والاتصال",
+                physicalTherapy: "العلاج الطبيعي",
+
+                department: "القسم المفضل *",
+                selectDepartment: "اختر القسم المفضل",
+                dept: {
+                    hr: "الموارد البشرية",
+                    marketingComms: "التسويق والاتصالات",
+                    technical: "الفريق التقني",
+                    businessDev: "تطوير الأعمال",
+                    projectMgmt: "إدارة المشاريع"
+                },
+
+                // Application questions
+                motivation: "لماذا تريد الانضمام لإرث؟ *",
+                skills: "ما المهارات التي يمكنك تقديمها لإرث؟ *",
+                selectSkills: "اختر قسماً أولاً",
+                skillsHint: "اختر جميع المهارات المناسبة",
+                otherSkills: "يرجى تحديد مهاراتك *",
+
+                // Optional links
+                linkedin: "حساب LinkedIn",
+                portfolio: "معرض الأعمال / GitHub",
+
+                // Submit
+                submit: "إرسال الطلب"
+            },
             formPlaceholder: "جاري تحميل نموذج التقديم...",
 
             expectationsTitle: "ما نتوقعه",
@@ -662,7 +770,7 @@ const content = {
 
             infoTitle: "ابق على تواصل",
             email: "البريد الإلكتروني",
-            emailValue: "contact@erth.eg",
+            emailValue: "info@erth.dev",
             phone: "الهاتف",
             phoneValue: "+20 XXX XXX XXXX",
             location: "الموقع",

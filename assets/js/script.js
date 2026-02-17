@@ -13,6 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeScrollToTop();
     initializeCounters();
     activePageHighlight();
+
+    // Ensure page-specific content is loaded after DOM is ready
+    // This fixes race conditions where content might not load on first visit
+    const pageName = document.body.getAttribute('data-page');
+    if (pageName) {
+        updatePageContent(currentLang);
+    }
 });
 
 // ============================================
@@ -271,18 +278,24 @@ function updateJoinPage(lang) {
     // Update why join points
     const whyJoinContainer = document.getElementById('why-join-container');
     if (whyJoinContainer && data.whyPoints) {
-        whyJoinContainer.innerHTML = data.whyPoints.map(point => `
+        const whyJoinHTML = data.whyPoints.map(point => `
             <div class="card fade-in">
-                <div style="margin-bottom: 1rem; color: var(--color-emerald); font-size: 2rem;">✓</div>
                 <p>${point}</p>
             </div>
         `).join('');
+        whyJoinContainer.innerHTML = whyJoinHTML;
+        // Cache in sessionStorage for persistence
+        sessionStorage.setItem('whyJoin_' + lang, whyJoinHTML);
+    } else if (whyJoinContainer && !data.whyPoints) {
+        // Try to restore from sessionStorage if data is missing
+        const cached = sessionStorage.getItem('whyJoin_' + lang);
+        if (cached) whyJoinContainer.innerHTML = cached;
     }
 
     // Update process steps
     const processContainer = document.getElementById('process-container');
     if (processContainer && data.processSteps) {
-        processContainer.innerHTML = data.processSteps.map(step => `
+        const processHTML = data.processSteps.map(step => `
             <div class="card fade-in" style="text-align: center;">
                 <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: linear-gradient(135deg, var(--color-emerald), var(--color-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800;">
                     ${step.step}
@@ -291,6 +304,11 @@ function updateJoinPage(lang) {
                 <p>${step.description}</p>
             </div>
         `).join('');
+        processContainer.innerHTML = processHTML;
+        sessionStorage.setItem('process_' + lang, processHTML);
+    } else if (processContainer && !data.processSteps) {
+        const cached = sessionStorage.getItem('process_' + lang);
+        if (cached) processContainer.innerHTML = cached;
     }
 
     observeElements();
@@ -336,12 +354,17 @@ function initializeNavigation() {
 }
 
 function activePageHighlight() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('.navbar-link');
 
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        // Check for home page
+        if (currentPath === '/' && (href === '/' || href === '/index.html')) {
+            link.classList.add('active');
+        }
+        // Check for other pages - handle both clean and .html extensions
+        else if (href === currentPath || href === currentPath + '.html' || currentPath === href + '.html') {
             link.classList.add('active');
         }
     });
@@ -455,10 +478,16 @@ function validateForm(formId) {
     return isValid;
 }
 
-// Attach form validation to forms
+// Attach form validation to forms (excluding contact form which has its own handler)
 document.addEventListener('DOMContentLoaded', () => {
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
+        // Skip contact and join forms - they have their own handlers
+        const formId = form.getAttribute('id');
+        if (formId === 'contact-form' || formId === 'join-form') {
+            return;
+        }
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const formId = form.getAttribute('id');

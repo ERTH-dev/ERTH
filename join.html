@@ -8,7 +8,78 @@
         content="Join ERTH - Transform yourself into a corporate-ready professional through our structured development program.">
     <meta name="keywords" content="Join ERTH, student recruitment, corporate training, professional development">
     <title>Join Us - ERTH</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Modern form inputs with contemporary styling */
+        #join-form input[type="text"],
+        #join-form input[type="email"],
+        #join-form input[type="tel"],
+        #join-form input[type="url"],
+        #join-form select,
+        #join-form textarea {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.04), rgba(59, 130, 246, 0.04)) !important;
+            border: 1.5px solid rgba(16, 185, 129, 0.2) !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 2px 4px rgba(16, 185, 129, 0.06) !important;
+        }
+
+        /* Hover effect */
+        #join-form input[type="text"]:hover,
+        #join-form input[type="email"]:hover,
+        #join-form input[type="tel"]:hover,
+        #join-form input[type="url"]:hover,
+        #join-form select:hover,
+        #join-form textarea:hover {
+            border-color: rgba(16, 185, 129, 0.35) !important;
+            box-shadow: 0 4px 8px rgba(16, 185, 129, 0.12) !important;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(59, 130, 246, 0.06)) !important;
+        }
+
+        /* Focus effect */
+        #join-form input[type="text"]:focus,
+        #join-form input[type="email"]:focus,
+        #join-form input[type="tel"]:focus,
+        #join-form input[type="url"]:focus,
+        #join-form select:focus,
+        #join-form textarea:focus {
+            outline: none !important;
+            border-color: rgb(16, 185, 129) !important;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2), 0 4px 12px rgba(16, 185, 129, 0.25) !important;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(59, 130, 246, 0.08)) !important;
+        }
+
+        /* Dark mode adjustments */
+        [data-theme="dark"] #join-form input[type="text"],
+        [data-theme="dark"] #join-form input[type="email"],
+        [data-theme="dark"] #join-form input[type="tel"],
+        [data-theme="dark"] #join-form input[type="url"],
+        [data-theme="dark"] #join-form select,
+        [data-theme="dark"] #join-form textarea {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.06)) !important;
+            border-color: rgba(16, 185, 129, 0.25) !important;
+        }
+
+        [data-theme="dark"] #join-form input[type="text"]:hover,
+        [data-theme="dark"] #join-form input[type="email"]:hover,
+        [data-theme="dark"] #join-form input[type="tel"]:hover,
+        [data-theme="dark"] #join-form input[type="url"]:hover,
+        [data-theme="dark"] #join-form select:hover,
+        [data-theme="dark"] #join-form textarea:hover {
+            border-color: rgba(16, 185, 129, 0.4) !important;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(59, 130, 246, 0.1)) !important;
+        }
+
+        [data-theme="dark"] #join-form input[type="text"]:focus,
+        [data-theme="dark"] #join-form input[type="email"]:focus,
+        [data-theme="dark"] #join-form input[type="tel"]:focus,
+        [data-theme="dark"] #join-form input[type="url"]:focus,
+        [data-theme="dark"] #join-form select:focus,
+        [data-theme="dark"] #join-form textarea:focus {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(59, 130, 246, 0.12)) !important;
+            border-color: rgba(16, 185, 129, 0.6) !important;
+        }
+    </style>
 </head>
 
 <body data-page="join">
@@ -16,20 +87,20 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container navbar-container">
-            <a href="index.html" class="navbar-logo">
+            <a href="/index.html" class="navbar-logo">
                 <img src="assets/images/logo.jpeg" alt="ERTH Logo" class="logo-img">
                 <span data-i18n="nav.logo">ERTH</span>
             </a>
 
             <div class="navbar-menu">
                 <div class="navbar-links" id="navbar-links">
-                    <a href="index.html" class="navbar-link" data-i18n="nav.home">Home</a>
-                    <a href="about.html" class="navbar-link" data-i18n="nav.about">About</a>
-                    <a href="departments.html" class="navbar-link" data-i18n="nav.departments">Departments</a>
-                    <a href="projects.html" class="navbar-link" data-i18n="nav.projects">Projects</a>
-                    <a href="leadership.html" class="navbar-link" data-i18n="nav.leadership">Leadership</a>
-                    <a href="join.html" class="navbar-link" data-i18n="nav.join">Join Us</a>
-                    <a href="contact.html" class="navbar-link" data-i18n="nav.contact">Contact</a>
+                    <a href="/index.html" class="navbar-link" data-i18n="nav.home">Home</a>
+                    <a href="/about.html" class="navbar-link" data-i18n="nav.about">About</a>
+                    <a href="/departments.html" class="navbar-link" data-i18n="nav.departments">Departments</a>
+                    <a href="/projects.html" class="navbar-link" data-i18n="nav.projects">Projects</a>
+                    <a href="/leadership.html" class="navbar-link" data-i18n="nav.leadership">Leadership</a>
+                    <a href="/join.html" class="navbar-link" data-i18n="nav.join">Join Us</a>
+                    <a href="/contact.html" class="navbar-link" data-i18n="nav.contact">Contact</a>
                 </div>
 
                 <button class="lang-toggle" id="lang-toggle">العربية</button>
@@ -78,44 +149,194 @@
     </section>
 
     <!-- Application Form -->
-    <section class="section">
+    <section class="section" id="application-form">
         <div class="container">
             <div style="max-width: 700px; margin: 0 auto;">
                 <div class="text-center" style="margin-bottom: 2rem;">
                     <h2 class="fade-in" data-i18n="join.formTitle">Application Form</h2>
                 </div>
 
-                <!-- Google Form Embed - Replace the src URL with your actual Google Form link -->
-                <!-- 
-                    Google Form Placeholder 
-                    To activate: Uncomment the iframe below and replace YOUR_GOOGLE_FORM_LINK_HERE with your form URL
-                -->
-                <div class="form-placeholder"
-                    style="width: 100%; max-width: 700px; margin: 0 auto; height: 400px; background: var(--color-surface); border: 2px dashed var(--color-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--color-gray-500);">
-                    <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        style="margin-bottom: 1rem; opacity: 0.5;">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                        </path>
-                    </svg>
-                    <p data-i18n="join.formPlaceholder">Application Form Loading...</p>
-                    <p style="font-size: 0.875rem; margin-top: 0.5rem; opacity: 0.7;">(Form integration pending)</p>
-                </div>
+                <!-- Join Application Form -->
+                <form id="join-form" class="card" style="padding: 2rem;">
+                    <!-- Personal Information -->
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem;" data-i18n="join.form.personalInfo">
+                            Personal Information</h3>
 
-                <!-- 
-                <iframe 
-                    src="YOUR_GOOGLE_FORM_LINK_HERE" 
-                    width="100%" 
-                    height="1200" 
-                    frameborder="0" 
-                    marginheight="0" 
-                    marginwidth="0"
-                    style="border-radius: 8px;">
-                    Loading…
-                </iframe> 
-                -->
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; background: var(--color-bg); color: var(--color-text);">
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.email">Email Address *</label>
+                            <input type="email" id="email" name="email" required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; background: var(--color-bg); color: var(--color-text);">
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; background: var(--color-bg); color: var(--color-text);">
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="universityId" style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.universityId">University ID *</label>
+                            <input type="text" id="universityId" name="universityId" required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; background: var(--color-bg); color: var(--color-text);">
+                        </div>
+                    </div>
+
+                    <!-- Academic Information -->
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem;" data-i18n="join.form.academicInfo">
+                            Academic Information</h3>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="academicYear" style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.academicYear">Academic Year *</label>
+                            <select id="academicYear" name="academicYear" required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; background: var(--color-bg); color: var(--color-text);">
+                                <option value="" data-i18n="join.form.selectYear">Select your year</option>
+                                <option value="Level 1" data-i18n="join.form.level1">Level 1</option>
+                                <option value="Level 2" data-i18n="join.form.level2">Level 2</option>
+                                <option value="Level 3" data-i18n="join.form.level3">Level 3</option>
+                                <option value="Level 4" data-i18n="join.form.level4">Level 4</option>
+                                <option value="Level 5" data-i18n="join.form.level5">Level 5</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="faculty" style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.faculty">Faculty *</label>
+                            <select id="faculty" name="faculty" required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; background: var(--color-bg); color: var(--color-text);">
+                                <option value="" data-i18n="join.form.selectFaculty">Select your faculty</option>
+                                <option value="Business" data-i18n="join.form.business">Business</option>
+                                <option value="Law" data-i18n="join.form.law">Law</option>
+                                <option value="Engineering" data-i18n="join.form.engineering">Engineering</option>
+                                <option value="Computer Science & Engineering" data-i18n="join.form.cse">Computer
+                                    Science & Engineering</option>
+                                <option value="Science" data-i18n="join.form.science">Science</option>
+                                <option value="Medicine" data-i18n="join.form.medicine">Medicine</option>
+                                <option value="Dentistry" data-i18n="join.form.dentistry">Dentistry</option>
+                                <option value="Pharmacy" data-i18n="join.form.pharmacy">Pharmacy</option>
+                                <option value="Applied Health Sciences Technology" data-i18n="join.form.ahst">Applied
+                                    Health Sciences Technology</option>
+                                <option value="Nursing" data-i18n="join.form.nursing">Nursing</option>
+                                <option value="Textile Science Engineering" data-i18n="join.form.textile">Textile
+                                    Science Engineering</option>
+                                <option value="Social & Human Sciences" data-i18n="join.form.social">Social & Human
+                                    Sciences</option>
+                                <option value="Mass Media & Communication" data-i18n="join.form.media">Mass Media &
+                                    Communication</option>
+                                <option value="Physical Therapy" data-i18n="join.form.physicalTherapy">Physical Therapy
+                                </option>
+                            </select>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="department" style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.department">Department Preference *</label>
+                            <select id="department" name="department" required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; background: var(--color-bg); color: var(--color-text);">
+                                <option value="" data-i18n="join.form.selectDepartment">Select preferred department
+                                </option>
+                                <option value="Human Resources" data-i18n="join.form.dept.hr">Human Resources</option>
+                                <option value="Marketing & Communications" data-i18n="join.form.dept.marketingComms">
+                                    Marketing & Communications</option>
+                                <option value="Technical Team" data-i18n="join.form.dept.technical">Technical Team
+                                </option>
+                                <option value="Business Development" data-i18n="join.form.dept.businessDev">Business
+                                    Development</option>
+                                <option value="Project Management" data-i18n="join.form.dept.projectMgmt">Project
+                                    Management</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Application Questions -->
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem;"
+                            data-i18n="join.form.applicationQuestions">Application Questions</h3>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="motivation" style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.motivation">Why do you want to join ERTH? *</label>
+                            <textarea id="motivation" name="motivation" required rows="5"
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; background: var(--color-bg); color: var(--color-text); resize: vertical;"></textarea>
+                        </div>
+
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.skills">What skills can you bring to ERTH? *</label>
+                            <div id="skills-container"
+                                style="max-height: 300px; overflow-y: auto; border: 1px solid var(--color-border); border-radius: 8px; padding: 1rem; background: var(--color-bg);">
+                                <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin: 0;"
+                                    data-i18n="join.form.selectSkills">
+                                    Select a department first
+                                </p>
+                            </div>
+                            <input type="hidden" id="skills" name="skills" required>
+                            <small
+                                style="display: block; margin-top: 0.5rem; color: var(--color-text-secondary); font-size: 0.875rem;"
+                                data-i18n="join.form.skillsHint">
+                                Select all skills that apply
+                            </small>
+                        </div>
+
+                        <!-- Other Skills Field (Hidden by default) -->
+                        <div id="other-skills-container" style="margin-bottom: 1.5rem; display: none;">
+                            <label for="otherSkills" style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.otherSkills">Please specify your skills *</label>
+                            <textarea id="otherSkills" name="otherSkills" rows="4"
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; background: var(--color-bg); color: var(--color-text); resize: vertical;"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Optional Links -->
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem;" data-i18n="join.form.optionalLinks">
+                            Professional Links (Optional)</h3>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="linkedin" style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.linkedin">LinkedIn Profile</label>
+                            <input type="url" id="linkedin" name="linkedin"
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; background: var(--color-bg); color: var(--color-text);">
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="portfolio" style="display: block; margin-bottom: 0.5rem; font-weight: 600;"
+                                data-i18n="join.form.portfolio">Portfolio / GitHub</label>
+                            <input type="url" id="portfolio" name="portfolio"
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; background: var(--color-bg); color: var(--color-text);">
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn btn-primary" style="min-width: 200px;"
+                            data-i18n="join.form.submit">
+                            Submit Application
+                        </button>
+                    </div>
+
+                    <!-- Status Messages -->
+                    <div id="form-message"
+                        style="margin-top: 1.5rem; padding: 1rem; border-radius: 8px; display: none;"></div>
+                </form>
             </div>
         </div>
+    </section>
+    </div>
+    </div>
     </section>
 
     <!-- Expectations Section -->
@@ -145,18 +366,18 @@
                 <div class="footer-section">
                     <h4 data-i18n="footer.quickLinks">Quick Links</h4>
                     <div class="footer-links">
-                        <a href="about.html" class="footer-link" data-i18n="nav.about">About</a>
-                        <a href="departments.html" class="footer-link" data-i18n="nav.departments">Departments</a>
-                        <a href="projects.html" class="footer-link" data-i18n="nav.projects">Projects</a>
-                        <a href="leadership.html" class="footer-link" data-i18n="nav.leadership">Leadership</a>
+                        <a href="/about.html" class="footer-link" data-i18n="nav.about">About</a>
+                        <a href="/departments.html" class="footer-link" data-i18n="nav.departments">Departments</a>
+                        <a href="/projects.html" class="footer-link" data-i18n="nav.projects">Projects</a>
+                        <a href="/leadership.html" class="footer-link" data-i18n="nav.leadership">Leadership</a>
                     </div>
                 </div>
 
                 <div class="footer-section">
                     <h4 data-i18n="footer.connect">Connect</h4>
                     <div class="footer-links">
-                        <a href="join.html" class="footer-link" data-i18n="nav.join">Join Us</a>
-                        <a href="contact.html" class="footer-link" data-i18n="nav.contact">Contact</a>
+                        <a href="/join.html" class="footer-link" data-i18n="nav.join">Join Us</a>
+                        <a href="/contact.html" class="footer-link" data-i18n="nav.contact">Contact</a>
                     </div>
                     <!-- Social media icons disabled - will be enabled later
                     <div class="footer-social">
@@ -199,6 +420,7 @@
     <!-- Scripts -->
     <script src="assets/js/content.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/join-form.js"></script>
 </body>
 
 </html>
