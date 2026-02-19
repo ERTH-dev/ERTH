@@ -91,6 +91,8 @@ button {
     --color-text-light: var(--color-gray-600);
     --color-background: var(--color-white);
     --color-surface: var(--color-gray-50);
+    --color-border: var(--color-gray-200);
+    --color-bg: var(--color-gray-50);
 
     /* Spacing */
     --spacing-xs: 0.5rem;

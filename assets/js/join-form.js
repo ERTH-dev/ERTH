@@ -204,18 +204,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitButton.textContent = currentLang === 'en' ? 'Submitting...' : 'جاري الإرسال...';
                 formMessage.style.display = 'none';
 
-                // Send to backend
-                const response = await fetch('https://erth.fly.dev/api/join', {
+                // Send to Web3Forms
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        access_key: 'c989f128-a600-47f3-841c-4a59e4cc30e8',
+                        subject: 'New ERTH Application - ' + formData.fullName,
+                        ...formData
+                    })
                 });
 
                 const result = await response.json();
+                console.log('Web3Forms response:', result);
 
-                if (response.ok && result.success) {
+                if (result.success) {
                     // Success
                     formMessage.style.display = 'block';
                     formMessage.style.background = 'var(--color-emerald-light, #d1fae5)';

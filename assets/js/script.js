@@ -2,6 +2,11 @@
 // ERTH Corporate Website - Main JavaScript
 // ============================================
 
+// Service Worker Registration (no-cache version)
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js?v=3.0').catch(() => { });
+}
+
 // Language Management
 let currentLang = localStorage.getItem('lang') || 'en';
 
