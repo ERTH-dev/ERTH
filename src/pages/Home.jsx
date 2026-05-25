@@ -94,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* Metrics Section */}
-      <section className="metrics stacking-section stack-1">
+      <section className="metrics stacking-section stack-1 scroll-snap-section">
         <div className="container">
           <div className="text-center" style={{ marginBottom: '3rem' }}>
             <h2 className="animate-on-scroll slide-up">{data.metricsTitle}</h2>
@@ -114,7 +114,7 @@ export default function Home() {
       </section>
 
       {/* Why ERTH Section */}
-      <section className="section stacking-section stack-2">
+      <section className="section stacking-section stack-2 scroll-snap-section">
         <div className="radial-glow" style={{ top: '20%', right: '25%' }}></div>
         <div className="container">
           <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -127,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* ERTH Evolution Model */}
-      <section className="section stacking-section stack-3">
+      <section className="section stacking-section stack-3 scroll-snap-section">
         <div className="radial-glow-blue" style={{ top: '10%', left: '10%' }}></div>
         <div className="container">
           <div className="text-center" style={{ marginBottom: '3.5rem' }}>
@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Core Departments Section */}
-      <section className="section stacking-section stack-4">
+      <section className="section stacking-section stack-4 scroll-snap-section">
         <div className="radial-glow" style={{ top: '20%', left: '30%' }}></div>
         <div className="container">
           <div className="text-center" style={{ marginBottom: '2.5rem' }}>
@@ -188,7 +188,7 @@ export default function Home() {
       </section>
 
       {/* Our Products Section */}
-      <section className="section stacking-section stack-5">
+      <section className="section stacking-section stack-5 scroll-snap-section">
         <div className="radial-glow-blue" style={{ bottom: '10%', right: '15%' }}></div>
         <div className="container">
           <div className="text-center" style={{ marginBottom: '3.5rem' }}>
@@ -241,7 +241,7 @@ export default function Home() {
       </section>
 
       {/* Security Partnership Section */}
-      <section className="section stacking-section stack-6" style={{ paddingTop: '4rem', paddingBottom: '5rem', overflow: 'visible' }}>
+      <section className="section stacking-section stack-6 scroll-snap-section" style={{ paddingTop: '4rem', paddingBottom: '5rem', overflow: 'visible' }}>
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
             <div className="animate-on-scroll slide-left">
@@ -338,7 +338,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="section non-stacking-cover">
+      <section className="section non-stacking-cover scroll-snap-section">
         <div className="radial-glow" style={{ bottom: '-20%', left: '30%' }}></div>
         <div className="container">
           <div className="text-center" style={{ maxWidth: '700px', margin: '0 auto' }}>
