@@ -23,6 +23,13 @@ export default function Layout() {
 
   return (
     <>
+      {/* Background Visual Effects */}
+      <div className="ambient-glow-wrapper">
+        <div className="ambient-orb orb-cyan"></div>
+        <div className="ambient-orb orb-blue"></div>
+        <div className="ambient-orb orb-purple"></div>
+      </div>
+
       <Navbar />
       <Outlet />
       <Footer />

@@ -9,9 +9,9 @@ export default function Footer() {
       <div className="container">
         <div className="footer-container">
           <div className="footer-section">
-            <h4><span>{t('nav.logo')}</span></h4>
+            <h4><span className="logo-text">ERTH</span></h4>
             <p>{t('footer.tagline')}</p>
-            <p style={{ marginTop: '1rem', color: 'var(--color-gray-500)', fontSize: '0.875rem' }}>
+            <p style={{ marginTop: '1rem', color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>
               {t('footer.university')}
             </p>
           </div>

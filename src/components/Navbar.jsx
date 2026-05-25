@@ -10,8 +10,8 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="container navbar-container">
         <NavLink to="/" className="navbar-logo">
-          <img src="/logo.jpeg" alt="ERTH Logo" className="logo-img" />
-          <span>{t('nav.logo')}</span>
+          <img src="/new-erth-logo.png" alt="ERTH Logo" className="logo-img" style={{ height: '36px', marginRight: '0.65rem' }} />
+          <span className="logo-text">ERTH</span>
         </NavLink>
 
         <div className="navbar-menu">
@@ -36,9 +36,11 @@ export default function Navbar() {
             </NavLink>
           </div>
 
-          <button className="lang-toggle" onClick={toggleLanguage}>
-            {lang === 'en' ? 'العربية' : 'English'}
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <button className="lang-toggle" onClick={toggleLanguage}>
+              {lang === 'en' ? 'العربية' : 'English'}
+            </button>
+          </div>
 
           <div className="mobile-menu-toggle" onClick={() => setMenuOpen(prev => !prev)}>
             <span></span>
@@ -50,3 +52,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+

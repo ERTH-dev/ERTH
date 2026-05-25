@@ -28,8 +28,8 @@ export default function ScrollToTop() {
       onClick={scrollUp}
       aria-label="Scroll to top"
     >
-      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M18 15l-6-6-6 6" />
       </svg>
     </button>
   );
