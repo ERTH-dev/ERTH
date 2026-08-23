@@ -240,12 +240,6 @@ const content = {
                     linkedin: "#"
                 },
                 {
-                    name: "Khaled Youssef",
-                    title: "Chief Marketing Officer",
-                    bio: "Developing marketing strategies and managing communication with beneficiaries and partners, including brand content and promotional activities.",
-                    linkedin: "#"
-                },
-                {
                     name: "Ahmed Shehata",
                     title: "Technical Team Manager",
                     bio: "Managing the organization's technology systems and infrastructure, and ensuring the highest efficiency and stability in supporting projects and operations.",
@@ -397,19 +391,19 @@ const content = {
             keyFeatures: "Key Features:",
             bestFor: "Best For:",
             unifiedTitle: "How They Work Together",
-            unifiedText: "ERTH Study Hub equips students with the academic resources they need to succeed, while ERTH Matching maps their skills to the right opportunities. Together, they create a complete system from learning to impact.",
-            flow1Title: "1. Study",
-            flow1Text: "Access lectures, summaries, test banks, and past exams to master your courses.",
+            unifiedText: "ERTH Training Center equips students with the training programs they need to develop corporate-ready skills, while ERTH Matching maps their capabilities to the right opportunities. Together, they create a complete system from training to impact.",
+            flow1Title: "1. Train",
+            flow1Text: "Access structured training programs, workshops, and skill-building resources tailored to your role.",
             flow2Title: "2. Evaluation",
-            flow2Text: "Evaluate yourself after each test, track your results, and identify areas for improvement.",
+            flow2Text: "Evaluate yourself after each module, track your progress, and identify areas for improvement.",
             flow3Title: "3. Match",
             flow3Text: "Get matched to projects and teams based on verified capability.",
             finalTitle: "Ready to Experience ERTH Platforms?",
-            finalText: "Start learning, get matched, and contribute to high-impact student projects.",
+            finalText: "Start training, get matched, and contribute to high-impact student projects.",
             authTitle: "\ud83d\udd10 One Account, Full Access",
-            authText: "Create a single ERTH account and get instant access to both platforms. Your credentials work seamlessly across ERTH Matching and ERTH Study Hub \u2014 no need to register separately.",
+            authText: "Create a single ERTH account and get instant access to both platforms. Your credentials work seamlessly across ERTH Matching and ERTH Training Center \u2014 no need to register separately.",
             matchingShortCta: "Open Matching",
-            lmsShortCta: "Open Study Hub",
+            lmsShortCta: "Open Training Center",
             matching: {
                 badge: "Talent Matching Platform",
                 title: "ERTH Matching",
@@ -419,18 +413,18 @@ const content = {
                 f3: "Fair shortlisting workflow for team leaders",
                 f4: "Performance-ready pipeline for student placements",
                 bestFor: "Students looking for the right role, and teams seeking verified talent quickly.",
-                cta: "Visit ERTH Matching"
+                cta: "Visit"
             },
             lms: {
-                badge: "Academic Support Platform",
-                title: "ERTH Study Hub",
-                description: "A student-focused academic platform that provides university course materials, lecture notes, summarizations, test banks, and previous exams to help students excel in their studies.",
-                f1: "Organized lecture notes and course materials by faculty and subject",
-                f2: "Concise summarizations for efficient exam preparation",
-                f3: "Comprehensive test banks with practice questions",
-                f4: "Access to previous exams for targeted revision",
-                bestFor: "University students looking for organized study resources, exam preparation materials, and academic support.",
-                cta: "Visit ERTH Study Hub"
+                badge: "Corporate Training Platform",
+                title: "ERTH Training Center",
+                description: "A structured corporate training platform that provides role-specific programs, skill-building workshops, and professional development resources to prepare students for real-world corporate environments.",
+                f1: "Role-specific training programs for each department",
+                f2: "Hands-on workshops and practical exercises",
+                f3: "Progress tracking and performance milestones",
+                f4: "Professional development resources aligned with industry standards",
+                bestFor: "ERTH members and aspiring professionals looking to build corporate-ready skills through structured training.",
+                cta: "Visit"
             }
         },
 
@@ -681,12 +675,6 @@ const content = {
                     linkedin: "#"
                 },
                 {
-                    name: "خالد يوسف",
-                    title: "مدير التسويق التنفيذي",
-                    bio: "تطوير استراتيجيات التسويق وإدارة التواصل مع المستفيدين والشركاء، بما في ذلك محتوى العلامة التجارية والأنشطة الترويجية.",
-                    linkedin: "#"
-                },
-                {
                     name: "أحمد شحاتة",
                     title: "مدير الفريق التقني",
                     bio: "إدارة أنظمة وبنية التكنولوجيا التحتية للمنظمة، وضمان أعلى كفاءة واستقرار في دعم المشاريع والعمليات.",
@@ -838,17 +826,17 @@ const content = {
             keyFeatures: "أهم المزايا:",
             bestFor: "مناسب لـ:",
             unifiedTitle: "كيف تعمل المنصتان معًا",
-            unifiedText: "منصة ERTH LMS تطور المهارات من خلال تعلم منظم، بينما ERTH Matching يربط هذه المهارات بالفرص المناسبة. معًا يشكلان نظامًا متكاملًا من التعلم إلى التأثير.",
-            flow1Title: "1. تعلّم",
-            flow1Text: "اكتسب معرفة ومهارات عملية مخصصة للدور داخل منصة LMS.",
+            unifiedText: "مركز تدريب إرث يطور المهارات من خلال برامج تدريبية منظمة، بينما ERTH Matching يربط هذه المهارات بالفرص المناسبة. معًا يشكلان نظامًا متكاملًا من التدريب إلى التأثير.",
+            flow1Title: "1. تدرّب",
+            flow1Text: "اكتسب مهارات مؤسسية حقيقية من خلال برامج تدريبية مخصصة لدورك.",
             flow2Title: "2. قيّم",
             flow2Text: "تابع النتائج عبر المهام المرحلية والتقييمات وإشارات الجاهزية.",
             flow3Title: "3. تطابق",
             flow3Text: "احصل على فرص ومشاريع مناسبة بناءً على كفاءتك المثبتة.",
             finalTitle: "جاهز لتجربة منصات إرث؟",
-            finalText: "ابدأ التعلّم، واحصل على الفرصة المناسبة، وشارك في مشاريع طلابية عالية التأثير.",
+            finalText: "ابدأ التدريب، واحصل على الفرصة المناسبة، وشارك في مشاريع طلابية عالية التأثير.",
             matchingShortCta: "افتح Matching",
-            lmsShortCta: "افتح LMS",
+            lmsShortCta: "افتح مركز التدريب",
             matching: {
                 badge: "منصة مطابقة المواهب",
                 title: "matching.erth.dev",
@@ -858,18 +846,18 @@ const content = {
                 f3: "آلية ترشيح عادلة لقادة الفرق",
                 f4: "خط جاهزية أداء لتوزيع الطلاب على الأدوار",
                 bestFor: "الطلاب الباحثون عن الدور الأنسب، والفرق التي تحتاج مواهب موثقة بسرعة.",
-                cta: "زيارة matching.erth.dev"
+                cta: "زيارة"
             },
             lms: {
-                badge: "منصة التعلّم",
-                title: "lms.erth.dev",
-                description: "تجربة LMS مركزية لتطوير المهارات بشكل موجّه، وتتبع المهام، والتدرج من المبتدئ إلى عضو جاهز للتنفيذ.",
-                f1: "مسارات تعلم منظمة حسب القسم والدور",
-                f2: "مهام مرحلية مع مخرجات عملية",
-                f3: "وضوح التقدم للطلاب والموجهين والمديرين",
-                f4: "مؤشرات جاهزية تدعم قرارات توزيع المشاريع",
-                bestFor: "الأعضاء الذين يريدون خارطة نمو واضحة، والفرق التي تحتاج معايير ثابتة.",
-                cta: "زيارة lms.erth.dev"
+                badge: "منصة التدريب المؤسسي",
+                title: "مركز تدريب إرث",
+                description: "منصة تدريب مؤسسية منظمة توفر برامج تدريبية مخصصة للدور، وورش عمل تطوير مهني، وموارد لبناء مهارات جاهزة لسوق العمل.",
+                f1: "برامج تدريبية مخصصة لكل قسم ودور",
+                f2: "ورش عمل عملية وتمارين تطبيقية",
+                f3: "تتبع التقدم ومعالم الأداء",
+                f4: "موارد تطوير مهني متوافقة مع معايير الصناعة",
+                bestFor: "أعضاء إرث والمهنيين الطموحين الراغبين في بناء مهارات مؤسسية من خلال تدريب منظم.",
+                cta: "زيارة"
             }
         },
 

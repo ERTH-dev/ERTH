@@ -1,13 +1,16 @@
+import { lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import About from './pages/About';
-import Departments from './pages/Departments';
-import Products from './pages/Products';
-import Leadership from './pages/Leadership';
-import Join from './pages/Join';
-import Contact from './pages/Contact';
+
+// Code-split secondary pages for fast initial bundle load
+const About = lazy(() => import('./pages/About'));
+const Departments = lazy(() => import('./pages/Departments'));
+const Products = lazy(() => import('./pages/Products'));
+const Leadership = lazy(() => import('./pages/Leadership'));
+const Join = lazy(() => import('./pages/Join'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 export default function App() {
   return (

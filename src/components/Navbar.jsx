@@ -1,13 +1,76 @@
-import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar() {
   const { lang, toggleLanguage, t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  const [sequenceNavVisible, setSequenceNavVisible] = useState(false);
+
+  useEffect(() => {
+    // If not homepage, navbar is always visible
+    if (!isHomePage) {
+      setSequenceNavVisible(true);
+      return;
+    }
+
+    // On homepage, navbar starts hidden
+    setSequenceNavVisible(false);
+
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const metricsSection = document.getElementById('metrics');
+          if (metricsSection) {
+            const rect = metricsSection.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * 0.85) {
+              setSequenceNavVisible(true);
+              ticking = false;
+              return;
+            }
+          }
+
+          const sequenceContainer = document.querySelector('.sequence-container');
+          if (sequenceContainer) {
+            const rect = sequenceContainer.getBoundingClientRect();
+            if (rect.bottom <= window.innerHeight * 0.3) {
+              setSequenceNavVisible(true);
+              ticking = false;
+              return;
+            }
+          }
+
+          setSequenceNavVisible(false);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    const handleProgress = (e) => {
+      const { isPastHero } = e.detail || {};
+      if (isPastHero !== undefined) {
+        setSequenceNavVisible(isPastHero);
+      }
+    };
+
+    window.addEventListener('sequence-progress', handleProgress);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('sequence-progress', handleProgress);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isHomePage, location.pathname]);
+
+  const navClass = `navbar ${isHomePage ? (sequenceNavVisible ? 'visible' : 'hidden-sequence') : 'visible'}`;
 
   return (
-    <nav className="navbar">
+    <nav className={navClass}>
       <div className="container navbar-container">
         <NavLink to="/" className="navbar-logo">
           <img src="/new-erth-logo.png" alt="ERTH Logo" className="logo-img" style={{ height: '36px', marginRight: '0.65rem' }} />
@@ -52,5 +115,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-

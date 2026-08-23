@@ -1,12 +1,23 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import useAnimations from '../hooks/useAnimations';
+import ScrollImageSequence from '../components/ScrollImageSequence';
 
 export default function Home() {
   const { lang, content } = useLanguage();
   const data = content.home;
   useAnimations();
+
+  const [isMobile, setIsMobile] = useState(() => (typeof window !== 'undefined' ? window.innerWidth < 992 : false));
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 992);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Custom stage icons for premium visual impact
   const stageIcons = [
@@ -78,23 +89,27 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="radial-glow" style={{ top: '-10%', left: '20%' }}></div>
-        <div className="radial-glow-blue" style={{ bottom: '-10%', right: '10%' }}></div>
-        <div className="container text-center">
-          <div className="hero-content fade-in">
-            <h1>{data.heroTitle}</h1>
-            <p className="lead">{data.heroSubtitle}</p>
-            <div className="hero-cta">
-              <Link to="/join" className="btn btn-primary btn-lg">{data.ctaJoin}</Link>
+      {/* Scroll-Linked Canvas Image Sequence on Desktop, Clean Static Hero on Mobile */}
+      {isMobile ? (
+        <section className="mobile-hero">
+          <div className="radial-glow" style={{ top: '-10%', left: '20%' }}></div>
+          <div className="radial-glow-blue" style={{ bottom: '-10%', right: '10%' }}></div>
+          <div className="container text-center">
+            <div className="hero-content">
+              <h1>{data.heroTitle}</h1>
+              <p className="lead">{data.heroSubtitle}</p>
+              <div className="hero-cta">
+                <Link to="/join" className="btn btn-primary btn-lg">{data.ctaJoin}</Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <ScrollImageSequence />
+      )}
 
       {/* Metrics Section */}
-      <section className="metrics stacking-section stack-1 scroll-snap-section">
+      <section id="metrics" className="metrics stacking-section stack-1 scroll-snap-section">
         <div className="container">
           <div className="text-center" style={{ marginBottom: '3rem' }}>
             <h2 className="animate-on-scroll slide-up">{data.metricsTitle}</h2>
@@ -228,7 +243,7 @@ export default function Home() {
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>{content.products.lms.description}</p>
               </div>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
-                <a href="https://lms.erth.dev" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ flex: 1, textAlign: 'center' }}>
+                <a href="https://nmu-training.erth.dev/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ flex: 1, textAlign: 'center' }}>
                   {content.products.lms.cta}
                 </a>
                 <Link to="/products" className="btn btn-outline" style={{ flex: 1, textAlign: 'center', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
