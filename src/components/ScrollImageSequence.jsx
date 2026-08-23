@@ -99,7 +99,21 @@ export default function ScrollImageSequence() {
     renderFrame(currentFrameRef.current);
   }, [renderFrame]);
 
-  // Fast preloader
+  // Lock page scrolling while loading screen is active
+  useEffect(() => {
+    if (!isLoaded) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    } else {
+      document.body.style.overflow = '';
+      ScrollTrigger.refresh();
+    }
+  }, [isLoaded]);
+
+  // Complete preloader that keeps loading screen active until every frame is ready
   useEffect(() => {
     let isCancelled = false;
     const images = new Array(TOTAL_FRAMES);
@@ -108,70 +122,64 @@ export default function ScrollImageSequence() {
 
     let loadedCount = 0;
 
-    const onFrameLoad = (idx, img) => {
+    const handleFrameComplete = (idx, img, success) => {
       if (isCancelled) return;
-      images[idx] = img;
-      loadedFlagsRef.current[idx] = true;
+      if (success && img) {
+        images[idx] = img;
+        loadedFlagsRef.current[idx] = true;
+      }
       loadedCount++;
 
       const progress = Math.min(100, Math.round((loadedCount / TOTAL_FRAMES) * 100));
       setLoadingProgress(progress);
 
-      if (loadedCount >= Math.min(15, TOTAL_FRAMES)) {
-        setIsLoaded(true);
+      // Render initial frame to canvas immediately once frame 0 is ready
+      if (idx === 0 && success && img) {
+        updateCanvasSize();
+        renderFrame(0);
       }
 
-      if (idx === currentFrameRef.current) {
-        renderFrame(idx);
+      // Keep loading screen active until every single frame is loaded and rendered
+      if (loadedCount >= TOTAL_FRAMES) {
+        setLoadingProgress(100);
+        renderFrame(currentFrameRef.current || 0);
+        setIsLoaded(true);
+      }
+    };
+
+    const loadSingleFrame = (idx) => {
+      const img = new Image();
+      img.src = FRAME_PATH(idx + 1);
+
+      if (img.decode) {
+        img.decode()
+          .then(() => {
+            handleFrameComplete(idx, img, true);
+          })
+          .catch(() => {
+            if (img.complete && img.naturalWidth > 0) {
+              handleFrameComplete(idx, img, true);
+            } else {
+              img.onload = () => handleFrameComplete(idx, img, true);
+              img.onerror = () => handleFrameComplete(idx, null, false);
+            }
+          });
+      } else {
+        img.onload = () => handleFrameComplete(idx, img, true);
+        img.onerror = () => handleFrameComplete(idx, null, false);
       }
     };
 
     // Load Frame 1 immediately
-    const firstImg = new Image();
-    firstImg.src = FRAME_PATH(1);
-    firstImg.onload = () => {
-      if (isCancelled) return;
-      images[0] = firstImg;
-      loadedFlagsRef.current[0] = true;
-      onFrameLoad(0, firstImg);
-      updateCanvasSize();
-      renderFrame(0);
-    };
+    loadSingleFrame(0);
 
-    // Preload remaining frames in batches
-    const loadBatch = (startIdx, batchSize) => {
-      for (let i = startIdx; i < Math.min(TOTAL_FRAMES + 1, startIdx + batchSize); i++) {
-        const idx = i - 1;
-        const img = new Image();
-        img.src = FRAME_PATH(i);
-        if (img.decode) {
-          img.decode()
-            .then(() => onFrameLoad(idx, img))
-            .catch(() => {
-              img.onload = () => onFrameLoad(idx, img);
-              img.onerror = () => {
-                if (!isCancelled) loadedCount++;
-              };
-            });
-        } else {
-          img.onload = () => onFrameLoad(idx, img);
-          img.onerror = () => {
-            if (!isCancelled) loadedCount++;
-          };
-        }
-      }
-    };
-
-    loadBatch(2, 30);
-    const timer = setTimeout(() => {
-      if (!isCancelled) {
-        loadBatch(32, TOTAL_FRAMES);
-      }
-    }, 100);
+    // Preload all remaining frames concurrently
+    for (let i = 1; i < TOTAL_FRAMES; i++) {
+      loadSingleFrame(i);
+    }
 
     return () => {
       isCancelled = true;
-      clearTimeout(timer);
     };
   }, [updateCanvasSize, renderFrame]);
 
