@@ -243,7 +243,7 @@ export default function Home() {
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>{content.products.lms.description}</p>
               </div>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
-                <a href="https://nmu-training.erth.dev/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ flex: 1, textAlign: 'center' }}>
+                <a href="https://training.erth.dev" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ flex: 1, textAlign: 'center' }}>
                   {content.products.lms.cta}
                 </a>
                 <Link to="/products" className="btn btn-outline" style={{ flex: 1, textAlign: 'center', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

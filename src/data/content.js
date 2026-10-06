@@ -234,6 +234,12 @@ const content = {
                     linkedin: "#"
                 },
                 {
+                    name: "Khaled Yousef",
+                    title: "Head of Marketing",
+                    bio: "Leading marketing and brand strategies, managing promotional campaigns, and expanding ERTH's audience engagement and outreach.",
+                    linkedin: "#"
+                },
+                {
                     name: "Adel Ibrahim",
                     title: "Head of Business Development",
                     bio: "Establishing and building partnerships with institutions and companies, and working to create opportunities for organizational growth and expansion.",
@@ -666,6 +672,12 @@ const content = {
                     name: "محمد عابد",
                     title: "مدير العمليات التنفيذي",
                     bio: "تنظيم العمليات اليومية وربط الفرق المختلفة لضمان تنفيذ المشاريع وفقاً للخطط والجداول الزمنية.",
+                    linkedin: "#"
+                },
+                {
+                    name: "خالد يوسف",
+                    title: "رئيس قسم التسويق",
+                    bio: "قيادة استراتيجيات التسويق والعلامة التجارية، وإدارة الحملات الترويجية، وتعزيز تفاعل الجمهور وحضوره مع إرث.",
                     linkedin: "#"
                 },
                 {

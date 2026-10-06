@@ -26,7 +26,7 @@ export default function Navbar() {
           const metricsSection = document.getElementById('metrics');
           if (metricsSection) {
             const rect = metricsSection.getBoundingClientRect();
-            if (rect.top <= window.innerHeight * 0.85) {
+            if (rect.top <= window.innerHeight * 1.095) {
               setSequenceNavVisible(true);
               ticking = false;
               return;
@@ -67,10 +67,10 @@ export default function Navbar() {
     };
   }, [isHomePage, location.pathname]);
 
-  const navClass = `navbar ${isHomePage ? (sequenceNavVisible ? 'visible' : 'hidden-sequence') : 'visible'}`;
+  const navClass = `navbar ${isHomePage ? `home-navbar ${sequenceNavVisible ? 'visible' : 'hidden-sequence'}` : 'visible'}`;
 
   return (
-    <nav className={navClass}>
+    <nav className={navClass} inert={isHomePage && !sequenceNavVisible}>
       <div className="container navbar-container">
         <NavLink to="/" className="navbar-logo">
           <img src="/new-erth-logo.png" alt="ERTH Logo" className="logo-img" style={{ height: '36px', marginRight: '0.65rem' }} />

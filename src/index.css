@@ -473,6 +473,15 @@ p {
     transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1), transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.navbar.home-navbar.hidden-sequence,
+.navbar.home-navbar.visible {
+    transition: opacity 0.12s ease-out, transform 0.12s ease-out;
+}
+
+.navbar.home-navbar.visible {
+    background: #050608;
+}
+
 .navbar-container {
     display: flex;
     justify-content: space-between;
@@ -766,7 +775,7 @@ html[dir="rtl"] .footer-link:hover {
     pointer-events: none;
     background-color: #000000;
     transform-origin: center center;
-    will-change: transform, opacity;
+    will-change: opacity;
 }
 
 .sequence-canvas {
@@ -937,7 +946,7 @@ html[dir="rtl"] .footer-link:hover {
     opacity: 0;
     background: #050608;
     transform-origin: center center;
-    will-change: transform, opacity, filter;
+    will-change: opacity;
 }
 
 .actual-landing-hero {
@@ -995,6 +1004,10 @@ html[dir="rtl"] .footer-link:hover {
     max-width: 680px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.sequence-actual-hero .lead {
+    color: #d4d8dc;
 }
 
 .hero-cta {

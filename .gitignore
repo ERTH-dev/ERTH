@@ -52,3 +52,13 @@ Thumbs.db
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Temporary / Scratch directories & generated reports
+webp/
+ezgif-*/
+*.pdf
+
+# Vite & build caches
+.vite/
+*.tsbuildinfo
+

@@ -83,7 +83,7 @@ export default function Products() {
                 <strong>{data.bestFor}</strong> <span>{data.lms.bestFor}</span>
               </p>
               
-              <a href="https://nmu-training.erth.dev/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ alignSelf: 'stretch' }}>
+              <a href="https://training.erth.dev" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ alignSelf: 'stretch' }}>
                 {data.lms.cta}
               </a>
             </article>
@@ -143,7 +143,7 @@ export default function Products() {
               <a href="https://matching.erth.dev" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 {data.matchingShortCta}
               </a>
-              <a href="https://nmu-training.erth.dev/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              <a href="https://training.erth.dev" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                 {data.lmsShortCta}
               </a>
             </div>
