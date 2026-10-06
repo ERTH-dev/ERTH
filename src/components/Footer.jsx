@@ -22,7 +22,7 @@ export default function Footer() {
               <Link to="/about" className="footer-link">{t('nav.about')}</Link>
               <Link to="/departments" className="footer-link">{t('nav.departments')}</Link>
               <a href="https://matching.erth.dev" target="_blank" rel="noopener noreferrer" className="footer-link">ERTH Matching</a>
-              <a href="https://training.erth.dev" target="_blank" rel="noopener noreferrer" className="footer-link">ERTH Training Center</a>
+              <a href="https://nmu-training.erth.dev/" target="_blank" rel="noopener noreferrer" className="footer-link">ERTH Training Center</a>
               <Link to="/leadership" className="footer-link">{t('nav.leadership')}</Link>
             </div>
           </div>
